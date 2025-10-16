@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
@@ -12,7 +13,9 @@ import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		FileOutputStream salida;
+		FileInputStream entrada;
 		ArrayList<alumno> lista = new ArrayList();
 		int veces = 1;
 		boolean generoComprovacion = false;
@@ -21,8 +24,8 @@ public class main {
 		System.out.println("Pasame la ruta del fichero a usar");
 		File fichero = new File(sc.nextLine());
 		try {
-			FileOutputStream salida =new FileOutputStream(fichero,true);
-			FileInputStream entrada =new FileInputStream(fichero);
+			 salida =new FileOutputStream(fichero,true);
+			 entrada =new FileInputStream(fichero);
 		} catch (FileNotFoundException e) {
 			//mete aqui un mensaje para que no s eha encontrado el archivo y que se creara
 		}
@@ -68,8 +71,12 @@ public class main {
 				veces++;
 				sc.nextLine();
 			}
-			// aqui hacer que lo guarde en fichero
+			//hacer que escriva
+			//salida.write(1);
+			//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
+			//DavidOrtiz-dot
 		}
 		sc.nextLine();
 	}
 }
+
